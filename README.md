@@ -8,7 +8,6 @@ A custom Conky-based desktop widget setup for Linux.
 
 - Any Linux distribution (Debian/Ubuntu-based recommended)
 - `conky-all` package
-- (Optional) `picom` for transparency & rounded corners
 
 ---
 
