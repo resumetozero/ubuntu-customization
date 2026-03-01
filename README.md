@@ -20,11 +20,11 @@ sudo apt update
 sudo apt install conky-all
 ```
 ### Step 1: Set-up
--from Terminal
+- From Terminal
 ```bash
 pkill conky   
 ~/widgets-theme/scripts.sh 
 ```
-- too start the theme at booting 
+- To start the theme at booting 
 add the file in "Startup Applications" with the command "~/widgets-theme/scripts.sh"
 ![Image Description](desktop.png)
