@@ -19,4 +19,12 @@ A custom Conky-based desktop widget setup for Linux.
 sudo apt update
 sudo apt install conky-all
 ```
+### Step 1: Set-up
+-from Terminal
+```bash
+sudo pkill conky   
+sudo ~/widgets-theme/scripts.sh 
+```
+- too start the theme at booting 
+add the file in "Startup Applications" with the command "sudo ~/widgets-theme/scripts.sh"
 ![Image Description](desktop.png)
