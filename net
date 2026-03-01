@@ -1,0 +1,60 @@
+conky.config = {
+    background = true,
+    update_interval = 1,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    double_buffer = true,
+    no_buffers = true,
+    text_buffer_size = 2048,
+
+    -- Window (Translucent, Modern Box)
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_colour = '000000',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+    -- Size (COMPACTED)
+    minimum_width = 320,
+    minimum_height = 80, 
+    maximum_width = 400,
+
+    -- Alignment
+    alignment = 'bottom_middle',
+    gap_x = -100,
+    gap_y = 25,
+
+    -- Graphics
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    border_inner_margin = 0,
+    border_outer_margin = 0,
+
+    -- Text
+    use_xft = true,
+    font = 'Sans:size=8:bold', 
+    xftalpha = 0.8,
+    uppercase = false,
+    override_utf8_locale = true,
+    default_color = 'ffffff',
+
+    -- Colors
+    color1 = '00ccff',
+    color2 = 'ffb321',
+}
+
+conky.text = [[
+${voffset 2}${font Sans:size=9:bold}NETWORK:${goto 70}${color1}${if_up wlo1}${addr wlo1}${else}${if_up enx00e04c68027c}${addr enx00e04c68027c}${else}OFFLINE${endif}${endif}${color}${alignr}${font Sans:size=8:bold}IFACE: ${color}${if_up wlo1}WIFI${else}${if_up enx00e04c68027c}LAN${else}N/A${endif}${endif}${color}
+${voffset 1}${hr 1}
+-- Live Speed Data
+${voffset 2}${offset 3}${color1}DOWN:${goto 100}${color1}${if_up wlo1}${downspeed wlo1}${else}${if_up enx00e04c68027c}${downspeed enx00e04c68027c}${else}0.0${endif}${endif}
+${voffset 1}${offset 3}${color2}UP:${goto 100}${color2}${if_up wlo1}${upspeed wlo1}${else}${if_up enx00e04c68027c}${upspeed enx00e04c68027c}${else}0.0${endif}${endif}
+
+${voffset 3}${font Sans:size=8:bold}${color}TOTAL DATA:
+${voffset 1}${offset 3}${color1}Received:${goto 100}${color1}${if_up wlo1}${totaldown wlo1}${else}${if_up enx00e04c68027c}${totaldown enx00e04c68027c}${else}0B${endif}${endif}${color}
+${voffset 1}${offset 3}${color2}Transmitted:${goto 100}${color2}${if_up wlo1}${totalup wlo1}${else}${if_up enx00e04c68027c}${totalup enx00e04c68027c}${else}0B${endif}${endif}${color}
+]]

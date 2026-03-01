@@ -1,0 +1,59 @@
+conky.config = {
+    background = true,
+    update_interval = 1,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    temperature_unit = 'celsius',
+
+    double_buffer = true,
+    no_buffers = true,
+    text_buffer_size = 2048,
+    
+    alignment = 'top_right',
+    gap_x = 350,
+    gap_y = 902,
+
+    minimum_width = 250,
+    minimum_height = 150,
+    maximum_width = 300,
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+
+    border_inner_margin = 0,
+    border_outer_margin = 0,
+
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+
+    use_xft = true,
+    font = 'Laconic:size=10',
+    xftalpha = 0.8,
+    uppercase = false,
+    override_utf8_locale = true,
+    default_color = 'ffffff',
+    color1 = 'C18C24',
+
+    own_window_colour = '000000',
+    own_window_type = 'desktop',
+    own_window = true,
+}
+
+conky.text = [[
+${font Orore:size=20}L${voffset -3}${font Sportrop:size=16}${color1}${goto 38}${cpu cpu0}${color}${font Laconic:size=16:condensed:bold}%${color}${goto 88}${font}${voffset -8}${color1}${freq_g cpu}@${goto 126}${color}GHz${goto 154}T.${color1} ${exec sensors | grep 'CPU Temperature' | cut -c22-23}${color}${goto 186}°C${voffset 9}${goto 88}${cpubar 3,110}
+${voffset 4}
+Core0${goto 40}»${goto 54}${cpubar cpu0 7,56}${color1}${goto 115}${cpu cpu0}${goto 130}${color}%${goto 142}-  T. ${color1}${execi 6 sensors | grep 'Core 0' | awk '{print $3}' | cut -c2-3}${color}°C
+Core1${goto 40}»${goto 54}${cpubar cpu1 7,56}${color1}${goto 115}${cpu cpu1}${goto 130}${color}%${goto 142}-  T. ${color1}${execi 6 sensors | grep 'Core 4' | awk '{print $3}' | cut -c2-3}${color}°C
+Core2${goto 40}»${goto 54}${cpubar cpu2 7,56}${color1}${goto 115}${cpu cpu2}${goto 130}${color}%${goto 142}-  T. ${color1}${execi 6 sensors | grep 'Core 8' | awk '{print $3}' | cut -c2-3}${color}°C
+Core3${goto 40}»${goto 54}${cpubar cpu3 7,56}${color1}${goto 115}${cpu cpu3}${goto 130}${color}%${goto 142}-  T. ${color1}${execi 6 sensors | grep 'Core 9' | awk '{print $3}' | cut -c2-3}${color}°C
+Core4${goto 40}»${goto 54}${cpubar cpu4 7,56}${color1}${goto 115}${cpu cpu4}${goto 130}${color}%${goto 142}-  T. ${color1}${execi 6 sensors | grep 'Core 10' | awk '{print $3}' | cut -c2-3}${color}°C
+Core5${goto 40}»${goto 54}${cpubar cpu5 7,56}${color1}${goto 115}${cpu cpu5}${goto 130}${color}%${goto 142}-  T. ${color1}${execi 6 sensors | grep 'Core 11' | awk '{print $3}' | cut -c2-3}${color}°C
+
+Vcore Voltage: ${color1}${exec sensors | grep 'Vcore Voltage' | cut -c22-25}${color} V. ${goto 130}MB${goto 152} T. ${color1}${exec sensors | grep 'MB Temperature' | cut -c22-23}${color}°C
+]]
+

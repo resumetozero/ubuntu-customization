@@ -1,0 +1,56 @@
+conky.config = {
+    -- SETTINGS --
+    background = true,
+    update_interval = 0.5,
+    double_buffer = true,
+    no_buffers = true,
+    text_buffer_size = 1024,
+
+    -- WINDOW --
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+
+    -- SIZE --
+    minimum_width = 600,
+    minimum_height = 320,
+    maximum_width = 800,
+
+    -- ALIGNMENT --
+    alignment = 'top_left',
+    gap_x = 150,
+    gap_y = 30,
+
+    -- GRAPHICS --
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+
+    -- TEXT --
+    use_xft = true,
+    font = 'Laconic:size=10',
+    xftalpha = 0.1,
+    uppercase = false,
+    override_utf8_locale = true,
+    default_color = '999999',
+
+    -- COLORS --
+    color1 = '00ccff',
+
+    -- WINDOW ARGB SETTINGS --
+    own_window_argb_visual = true,
+    own_window_colour = '000000',
+    own_window_argb_value = 0,
+
+    -- LUA --
+    lua_load = '/home/resumetozero/widgets-theme/mclock_rings.lua',
+    lua_draw_hook_pre = 'clock_rings',
+}
+
+conky.text = [[
+${voffset 150}${goto 135}${font Sportrop:size=16}${color1}${time %H:%M}${font Sportrop:size=14}${color1}:${time %S}
+${voffset -10}${goto 145}${color}${font Laconic:size=11:condensed:bold}${time %a %d %b %Y}${font} - Desk » ${color1}${desktop_name} (${desktop})${color} UPT » ${color1}${uptime_short}${color}
+]]
+

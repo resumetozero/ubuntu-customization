@@ -1,0 +1,26 @@
+conky.config = {
+    lua_load = '/home/resumetozero/widgets-theme/round.lua',
+    lua_draw_hook_pre = 'draw_bg',
+
+    alignment = 'top_right',
+    gap_x = 440,
+    gap_y = 890,
+
+    minimum_width = 1050,
+    minimum_height = 178,
+
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,   -- IMPORTANT: must be 0
+
+    double_buffer = true,
+    use_xft = true,
+
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+};
+
+conky.text = [[
+]];
