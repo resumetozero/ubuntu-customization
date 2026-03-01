@@ -1,6 +1,0 @@
-#!/bin/bash
-conky -c /home/resumetozero/Downloads/widgets-theme/cpu_core &
-conky -c /home/resumetozero/Downloads/widgets-theme/net &
-conky -c /home/resumetozero/Downloads/widgets-theme/memory &
-conky -c /home/resumetozero/Downloads/widgets-theme/procs
-
